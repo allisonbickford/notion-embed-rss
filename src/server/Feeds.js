@@ -10,15 +10,20 @@ export class Feeds {
     this.parser = new Parser();
   }
 
-  content() {
+  content(limit) {
     return Promise.all(
       this.sources.map(async (url) => {
         try {
           const response = await this.parser.parseURL(url);
+          const feed = new Feed(response);
+
+          if (limit >= 0) {
+            feed.items = feed.items.slice(0, limit);
+          }
 
           return Result.success({
             forUrl: url,
-            feed: new Feed(response).toJSON(),
+            feed: feed.toJSON(),
           });
         } catch (e) {
           return Result.error({ forUrl: url });

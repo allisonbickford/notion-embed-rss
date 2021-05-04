@@ -9,7 +9,7 @@ export const RefreshButton = () => {
 
   return (
     <button className={styles.refreshButton} onClick={refresh}>
-      👉 Refresh content 👈
+      <img src="../../refresh_icon.svg"/>
     </button>
   );
 };

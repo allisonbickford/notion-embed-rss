@@ -10,4 +10,5 @@ export const getServerSideProps = async ({ query, res }) =>
     sources: query.sources,
     font: query.font,
     theme: query.theme,
+    limit: query.limit,
   });

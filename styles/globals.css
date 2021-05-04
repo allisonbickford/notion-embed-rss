@@ -31,6 +31,14 @@ body {
   --color-accent: aquamarine;
 }
 
+.dracula {
+  --color-background: #282a36;
+  --color-text: #f8f8f2;
+  --color-border: #44475a;
+  --color-error: #ff5555;
+  --color-accent: #8be9fd;
+}
+
 .mono {
    font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
  }
